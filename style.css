@@ -10,6 +10,11 @@ body {
     background-color: #f9f9f9; 
 }
 
+/* Smooth Scroll Pure Page Ke Liye */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Top Notification Bar */
 .top-bar { 
     background: #111; 
@@ -57,10 +62,7 @@ nav {
 }
 .nav-links a:hover { 
     color: #bc8246; 
-/* Smooth Scroll Pure Page Ke Liye */
-html {
-    scroll-behavior: smooth;
-}
+} /* <-- Yahan bracket miss tha, ab fix ho gaya hai */
 
 /* Nav Shop Now Button Design */
 .nav-shop-btn {
@@ -78,7 +80,7 @@ html {
 }
 
 .nav-shop-btn:hover {
-    background: #bc8246; /* Premium golden-brown shade on hover */
+    background: #bc8246; 
     transform: translateY(-1px);
 }
 
@@ -387,16 +389,91 @@ footer {
     gap: 10px; 
 }
 
-/* Mobile Responsive */
+/* ==========================================
+   PERFECT MOBILE & TABLET RESPONSIVE STYLES
+   ========================================== */
 @media (max-width: 768px) {
-    .info-container { 
-        grid-template-columns: 1fr; 
-    }
+    /* Header & Navigation Fix */
     nav { 
         flex-direction: column; 
+        gap: 12px; 
+        padding: 15px 5%;
+    }
+    .nav-links { 
         gap: 15px; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-shop-btn {
+        width: 100%;
+        max-width: 160px;
+        text-align: center;
+        padding: 8px 12px;
+    }
+
+    /* Hero Banner Mobile Adjustment */
+    .hero {
+        height: 60vh;
+        padding: 0 4%;
+    }
+    .hero-content { 
+        padding: 20px;
     }
     .hero-content h1 { 
-        font-size: 32px; 
+        font-size: 30px; 
+    }
+
+    /* Product Grid layout for phones (2 products per row) */
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .product-img {
+        height: 200px; /* Choti screens ke liye height scale down */
+    }
+    .product-info {
+        padding: 12px;
+    }
+    .product-title {
+        font-size: 14px;
+    }
+    .product-price {
+        font-size: 16px;
+    }
+
+    /* Info Containers & Badges */
+    .info-container { 
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+    .info-box {
+        padding: 25px;
+    }
+    .badges-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 5%;
+    }
+
+    /* Form and Footer adjustments */
+    .whatsapp-container {
+        padding: 20px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { 
+        font-size: 24px; 
+    }
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); /* Tiny screen pe bhi 2 card aayenge neatly */
+    }
+    .product-img {
+        height: 160px;
     }
 }
